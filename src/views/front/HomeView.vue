@@ -138,16 +138,16 @@ export default {
     return {
       items: [
         {
-          src: '@/assets/seafood.png',
+          src: 'public/seafood.png',
         },
         {
-          src: 'src/assets/seafood.png',
+          src: 'public/seafood.png',
         },
         {
-          src: 'src/assets/seafood.png',
+          src: 'public/seafood.png',
         },
         {
-          src: 'src/assets/seafood.png',
+          src: 'public/seafood.png',
         },
       ],
     }
