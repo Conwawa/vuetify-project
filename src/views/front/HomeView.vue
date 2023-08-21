@@ -3,8 +3,9 @@
   <VRow>
     <VCol cols="12" style="padding: 0;">
       <v-carousel :show-arrows="false" hide-delimiters height="600">
-        <v-carousel-item v-for="(item, i) in items" :key="i" :src="'public/seafood.png'" cover>
+        <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover>
         </v-carousel-item>
+        <!-- <v-img src="@/assets/seafood.png"></v-img> -->
       </v-carousel>
       <div class="header">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -138,16 +139,16 @@ export default {
     return {
       items: [
         {
-          src: 'public/seafood.png',
+          src: new URL('./assets/seafood.png', import.meta.url).href,
         },
         {
-          src: 'public/seafood.png',
+          src: new URL('./assets/seafood.png', import.meta.url).href,
         },
         {
-          src: 'public/seafood.png',
+          src: new URL('./assets/seafood.png', import.meta.url).href,
         },
         {
-          src: 'public/seafood.png',
+          src: new URL('./assets/seafood.png', import.meta.url).href,
         },
       ],
     }
