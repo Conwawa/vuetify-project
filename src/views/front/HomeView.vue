@@ -139,16 +139,16 @@ export default {
     return {
       items: [
         {
-          src: new URL('./assets/seafood.png', import.meta.url).href,
+          src: new URL('@/assets/seafood.png', import.meta.url).href,
         },
         {
-          src: new URL('./assets/seafood.png', import.meta.url).href,
+          src: new URL('@/assets/seafood.png', import.meta.url).href,
         },
         {
-          src: new URL('./assets/seafood.png', import.meta.url).href,
+          src: new URL('@/assets/seafood.png', import.meta.url).href,
         },
         {
-          src: new URL('./assets/seafood.png', import.meta.url).href,
+          src: new URL('@/assets/seafood.png', import.meta.url).href,
         },
       ],
     }
