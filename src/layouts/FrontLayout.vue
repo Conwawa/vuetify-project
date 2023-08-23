@@ -1,5 +1,5 @@
 <template>
-  <VNavigationDrawer v-if="isMobile" v-model="drawer" location="left" temporary="">
+  <VNavigationDrawer v-if="isMobile" v-model="drawer" location="left" temporary style="position: absolute;left: 0px;">
     <VList>
       <template v-for="navitem in navItems" :key="navitem.to">
         <VListItem :to="navitem.to">{{ navitem.text }}</VListItem>
@@ -18,11 +18,15 @@
   </VNavigationDrawer>
   <!-- **************************************************************************************************** -->
   <VAppBar class="p-1 app-bar" :elevation="7">
-    <VContainer class="d-flex align-center">
+    <!-- logo -->
+    <VBtn to="/" :active="false" class="logo-absolute " height="86px" width="86px">
+      <VAppBarTitle style="color:secondary">
+        <VImg src="@/assets/logo.png" width="85px"></VImg>
+      </VAppBarTitle>
+    </VBtn>
+    <!-- ---- -->
+    <VContainer class="d-flex align-center justify-lg-center">
       <VAppBarNavIcon @click="drawer = true" v-if="isMobile"></VAppBarNavIcon>
-      <VBtn to="/" :active="false">
-        <VAppBarTitle style="color:secondary">禾家LOGO</VAppBarTitle>
-      </VBtn>
       <template v-if="!isMobile">
         <template v-for="navitem in navItems" :key="navitem.to">
           <VBtn :to="navitem.to" class="app-bar-text">{{ navitem.text }}</VBtn>
@@ -40,15 +44,14 @@
           </VList>
         </VMenu>
       </template>
-      <VSpacer></VSpacer>
+      <!-- <VSpacer></VSpacer> -->
       <!--        右邊icon        -->
-      <!-- <VBtn icon="mdi-magnify"></VBtn> -->
-      <VBtn to="/cart">
-        <VBadge floating :content="cart.toString()" color="danger">
-          <VIcon icon="mdi-cart"></VIcon>
-        </VBadge>
-      </VBtn>
     </VContainer>
+    <VBtn to="/cart">
+      <VBadge floating :content="cart.toString()" color="danger">
+        <VIcon icon="mdi-cart"></VIcon>
+      </VBadge>
+    </VBtn>
   </VAppBar>
   <VMain>
     <RouterView key="$route.path"></RouterView>
@@ -71,6 +74,19 @@
   border: 0.5px solid #fff;
   border-radius: 1%;
   width: 8rem;
+}
+
+.logo-absolute {
+  position: absolute;
+  top: -10px;
+  left: 37%;
+}
+
+@media (min-width: 1280px) {
+  .logo-absolute {
+    top: -10px;
+    left: 0px;
+  }
 }
 
 @media (min-width: 1920px) {
@@ -166,24 +182,6 @@ const logout = async () => {
   }
 }
 
-// const products = ref([]);
-
-// (async () => {
-//   try {
-//     const { data } = await api.get('/products')
-//     products.value.push(...data.result)
-//   } catch (error) {
-//     createSnackbar({
-//       text: error.response.data.message,
-//       showCloseButton: false,
-//       snackbarProps: {
-//         timeout: 2000,
-//         color: 'red',
-//         location: 'bottom'
-//       }
-//     })
-//   }
-// })()
 
 const icons =
   [
