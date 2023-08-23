@@ -36,7 +36,7 @@
   position: relative;
   text-align: center;
   color: white;
-  bottom: 88px;
+  bottom: 70px;
 }
 
 
@@ -77,7 +77,7 @@
 }
 
 /*Shrinking for mobile*/
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .waves {
     height: 100px;
     min-height: 70px;
@@ -85,7 +85,7 @@
   }
 
   .content {
-    height: 30vh;
+    height: 60vh;
   }
 
   h1 {
@@ -93,17 +93,17 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   .header {
-    bottom: 150px;
+    bottom: 100px;
   }
 
   .content {
-    height: 40vh;
+    height: 30vh;
   }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   .header {
     bottom: 150px;
   }
@@ -119,9 +119,9 @@
   }
 }
 
-@media (max-width: 1500px) {
+@media (min-width: 1500px) {
   .header {
-    bottom: 100px;
+    bottom: 76px;
   }
 
   .waves {

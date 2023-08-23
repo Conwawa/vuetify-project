@@ -70,6 +70,11 @@
   padding-top: var(--v-layout-top) !important;
 }
 
+.input {
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
 .search {
   border: 0.5px solid #fff;
   border-radius: 1%;
